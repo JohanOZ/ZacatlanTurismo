@@ -1,0 +1,38 @@
+extends ./layout/index
+
+block contenido
+
+    main.container.mt-5
+        .row.mb-5
+            .col-md-12
+                h1.d-block.w-100.text-center Agrega un Gerente
+
+                if(errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center= error.mensaje 
+
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action="/gerentes", method="POST")
+                        .form-group
+                            label(for="id_htl") Hotel 
+                            select(name="id_htl" class="form-control")
+                                each hotel in hoteles
+                                    option(value= hotel.id_htl) #{hotel.nombre} 
+                        .form-group 
+                            label(for="nombre") Nombre
+                            input#nombre(type="text", placeholder="Nombre Gerente", name="nombre", class="form-control", value= nombre)
+                        .form-group
+                            label(for="ap_paterno") Apellido Paterno
+                            input#ap_paterno(type="text", placeholder="Apellido Paterno Gerente", name="ap_paterno", class="form-control", value= ap_paterno)
+                        .form-group
+                            label(for="ap_materno") Apellido Materno
+                            input#ap_materno(type="text", placeholder="Apellido Materno Gerente", name="ap_materno", class="form-control", value= ap_materno)
+                        .form-group 
+                            label(for="telefono") Telefono
+                            input#telefono(type="tel", placeholder="Telefono Gerente", name="telefono", class="form-control", value= telefono)
+                        .form-group
+                            input.btn.btn-success.btn-block(type="submit", value="Guardar Gerente")
+
+        h1(class="mt-5 pb-5 text-center") #{pagina}
+        include ./layout/bloque_gerentes

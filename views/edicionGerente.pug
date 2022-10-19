@@ -1,0 +1,37 @@
+extends ./layout/index
+
+block contenido
+
+    main.container.mt-5
+        .row.mb-5
+            .col-md-12
+                h1.d-block.w-100.text-center Editar Gerente #{gerente.id_grt}
+
+                if(errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center= error.mensaje 
+
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action="/gerentes/editar", method="POST")
+                        .form-group 
+                            label(for="id_grt") ID Gerente 
+                            input#id_grt(type="text", placeholder= gerente.id_grt, name="id_grt", class="form-control", readonly value= gerente.id_grt)
+                        .form-group
+                            label(for="id_htl") Hotel 
+                            select(name="id_htl" class="form-control")
+                                each hotel in hoteles
+                                    option(value= hotel.id_htl) #{hotel.nombre}
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text", placeholder= gerente.nombre, name="nombre", class="form-control", value= nombre)  
+                        .form-group 
+                            label(for="apellidoPaterno") Apellido Paterno 
+                            input#apellidoPaterno(type="text", placeholder= gerente.ap_paterno, name="ap_paterno", class="form-control", value= ap_paterno)
+                        .form-group 
+                            label(for="apellidoMaterno") Apellido Materno 
+                            input#apellidoMaterno(type="text", placeholder= gerente.ap_materno, name="ap_materno", class="form-control", value= ap_materno)
+                        .form-group 
+                            label(for="telefono") Telefono 
+                            input#telefono(type="tel", placeholder= gerente.telefono, name="telefono", class="form-control", value= telefono)
+                        input.btn.btn-success.btn-block(type="submit", value="Guardar Gerente")

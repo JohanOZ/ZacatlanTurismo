@@ -1,0 +1,43 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5
+
+        h1.text-center #{pagina}
+        .row
+            .col-md-6
+                p Zacatlán es uno de los 217 municipios que conforman el estado mexicano de Puebla, a tan solo dos horas de la capital, se ubica en la Sierra Norte de la entidad, a una altitud promedio de 2040 msnm y pertenece a la primera región socioeconómica del Estado, colinda al norte con los municipios de Ahuazotepec, Huauchinango, Chiconcuautla y Ahuacatlán, al este con los municipios de Tepetzintla y Tetela de Ocampo, al sur con los municipios de Tetela de Ocampo, Aquixtla y Chignahuapan, al oeste con el municipio de Chignahuapan, el estado de Hidalgo y el municipio de Ahuazotepec.
+            .col-md-6
+                img.img-fluid(src="./img/acerca/zacatlan.jpg", alt="Zacatlan", srcset="")
+                footer.blockquote-footer
+                    | Puesta de sol de Zacatlán, Puebla.
+    
+    .container.mt-5
+        .row 
+            .col-sm
+                .card.h-100
+                    img.card-img-top.img-fluid.d-block.w-100(src="./img/inicio/actividades/cascadas.jpg")
+                    .card-body
+                        h2.text-center Atractivos
+                        p Zacatlán es un lugar lleno de atractivos como la barranca de Los Jilgueros muy cerca del centro de este Pueblo Mágico nos regala una de las vistas más espectaculares de la Sierra, esto sin mencionar que podrás admirarla desde un puente de cristal.
+            .col-sm 
+                .card.h-100
+                    img.card-img-top.img-fluid.d-block.w-100(src="./img/inicio/actividades/mirador.jpeg")
+                    .card-body
+                        h2.text-center Actividades
+                        p Este lindo pueblo no solo se caracteriza por sus hermosos paisajes y vistas, además cuenta con diversas actividades que puedes disfrutar en familia o solo, desde visitar la fabrica de sidral ubicada cerca del municipio hasta poder realizar un gran y bonito recorrido en el puente de cristal.
+
+            .col-sm
+                .card.h-100
+                    img.card-img-top.img-fluid.d-block.w-100(src="./img/inicio/actividades/bodegas.jpg")
+                    .card-body
+                        h2.text-center Festividades
+                        p Feria de la Manzana, se celebra aproximadamente en la tercera semana de agosto. Con la típica coronación de la Reina, exposiciones de relojes, antojitos, conciertos, ven y forma parte de las extensas festividades que se realizan en este bello pueblo mágico que lleva por nombre Zacatlán
+    .container.mt-5.w-80
+        h2.text-center ¿Cómo llegar?
+        .row 
+            .col 
+                p.text-align-justify Desde la Ciudad de México, en la central del Norte, puedes abordar alguna de las unidades de la línea Futura o Estrella Blanca a este destino; el tiempo aproximado de viaje es de 3 horas con 30 minutos, costo aproximado 320 pesos.
+                blockquote  A 125 kilómetros de la ciudad de Puebla, conduce por 2 horas y media en la Autopista Puebla-Tlaxcala, carretera Apizaco-Tlaxco hasta la desviación a Chignahuapan y posteriormente a Zacatlán.
+            .col
+                iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d240033.1368414317!2d-98.1022897!3d19.9447164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d06f1700c0c9ff%3A0x2b93f4772abb1da0!2zWmFjYXRsw6FuLCBQdWUu!5e0!3m2!1ses-419!2smx!4v1665274940758!5m2!1ses-419!2smx' width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')

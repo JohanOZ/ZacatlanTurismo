@@ -1,0 +1,32 @@
+extends ./layout/index
+
+block contenido
+
+    main.container.mt-5
+        .row.mb-5
+            .col-md-12
+                h1.d-block.w-100.text-center Editar Hotel #{hotel.id_htl}
+
+                if(errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center= error.mensaje 
+
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action="/hoteles/editar", method="POST")
+                        .form-group 
+                            label(for="id_htl") ID Hotel 
+                            input#id_htl(type="text", placeholder= hotel.id_htl, name="id_htl", class="form-control", readonly value= hotel.id_htl)
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text", placeholder= hotel.nombre, name="nombre", class="form-control", value= nombre)  
+                        .form-group 
+                            label(for="direccion") Dirección 
+                            input#direccion(type="text", placeholder= hotel.direccion, name="direccion", class="form-control", value= direccion)
+                        .form-group 
+                            label(for="telefono") Telefono 
+                            input#telefono(type="tel", placeholder= hotel.telefono, name="telefono", class="form-control", value= telefono)
+                        .form-group 
+                            label(for="correo") Correo 
+                            input#correo(type="email", placeholder= hotel.correo, name="correo", class="form-control", value= correo)
+                        input.btn.btn-success.btn-block(type="submit", value="Guardar Hotel")

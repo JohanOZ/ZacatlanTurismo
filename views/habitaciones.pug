@@ -1,0 +1,35 @@
+extends ./layout/index
+
+block contenido
+
+    main.container.mt-5
+        .row.mb-5
+            .col-md-12
+                h1.d-block.w-100.text-center Agrega una Habitación
+
+                if(errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center= error.mensaje 
+
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action="/habitaciones", method="POST")
+                        .form-group
+                            label(for="id_htl") Hotel 
+                            select(name="id_htl" class="form-control")
+                                each hotel in hoteles
+                                    option(value= hotel.id_htl) #{hotel.nombre}
+                        .form-group 
+                            label(for="nombre") Nombre
+                            input#nombre(type="text", placeholder="Nombre Habitación", name="nombre", class="form-control", value= nombre)
+                        .form-group
+                            label(for="piso") Piso
+                            input#piso(type="text", placeholder="Piso Habitación", name="piso", class="form-control", value= piso)
+                        .form-group 
+                            label(for="refrigerador") Refrigerador
+                            input#refrigerador(type="checkbox", name="refrigerador", class="form-control")
+                        .form-group
+                            input.btn.btn-success.btn-block(type="submit", value="Guardar Habitación")
+
+        h1(class="mt-5 pb-5 text-center") #{pagina}
+        include ./layout/bloque_habitaciones

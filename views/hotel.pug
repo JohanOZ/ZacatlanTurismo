@@ -1,0 +1,67 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5
+        .row
+            .col-md-5
+                img(src=`/img/hoteles/${hotel.id_htl}.jpg`, alt="imagen hotel" class="img-fluid")
+            .col-md-7
+                h1 #{hotel.nombre}
+                p.font-weight-bold
+                    svg.icon.icon-tabler.icon-tabler-hash(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        line(x1='5' y1='9' x2='19' y2='9')
+                        line(x1='5' y1='15' x2='19' y2='15')
+                        line(x1='11' y1='4' x2='7' y2='20')
+                        line(x1='17' y1='4' x2='13' y2='20')
+
+                    | ID Hotel: 
+                    span.font-weight-normal #{hotel.id_htl}
+                p.font-weight-bold  
+                    svg.icon.icon-tabler.icon-tabler-map-pin(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        circle(cx='12' cy='11' r='3')
+                        path(d='M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z')
+
+                    | Direccion: 
+                    span.font-weight-normal #{hotel.direccion} 
+                p.font-weight-bold
+                    svg.icon.icon-tabler.icon-tabler-phone(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2')
+                    | Telefono: 
+                    a(href=`tel:+${hotel.telefono}`)  #{hotel.telefono}
+                p.font-weight-bold  
+                    svg.icon.icon-tabler.icon-tabler-mail(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        rect(x='3' y='5' width='18' height='14' rx='2')
+                        polyline(points='3 7 12 13 21 7')
+                    | Correo: 
+                    a(href=`mailto:${hotel.correo}`)  #{hotel.correo}
+                if (gerente)
+                    p.font-weight-bold 
+                        svg.icon.icon-tabler.icon-tabler-user(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                            circle(cx='12' cy='7' r='4')
+                            path(d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+
+
+                        | Gerente: 
+                        span.font-weight-normal #{gerente.nombre} #{gerente.ap_paterno} #{gerente.ap_materno}
+                else 
+                    p 
+                        svg.icon.icon-tabler.icon-tabler-user(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                            circle(cx='12' cy='7' r='4')
+                            path(d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+
+
+                        | Sin Gerente
+                p.font-weight-bold
+                    svg.icon.icon-tabler.icon-tabler-bed(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6')
+                        circle(cx='7' cy='10' r='1')
+
+                    | Número de Habitaciones: 
+                    span.font-weight-normal #{resultado}

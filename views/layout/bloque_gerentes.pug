@@ -1,0 +1,39 @@
+.row.bloque
+    each gerente in gerentes 
+        .col-md-6.col-lg-4.mb-4
+            .card
+                .card-body
+                    h2.text-center Gerente ##{gerente.id_grt}
+                    p 
+                        svg.icon.icon-tabler.icon-tabler-building(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                            line(x1='3' y1='21' x2='21' y2='21')
+                            line(x1='9' y1='8' x2='10' y2='8')
+                            line(x1='9' y1='12' x2='10' y2='12')
+                            line(x1='9' y1='16' x2='10' y2='16')
+                            line(x1='14' y1='8' x2='15' y2='8')
+                            line(x1='14' y1='12' x2='15' y2='12')
+                            line(x1='14' y1='16' x2='15' y2='16')
+                            path(d='M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16')
+
+                        | Hotel ID: #{gerente.id_htl} 
+
+                    p 
+                        svg.icon.icon-tabler.icon-tabler-user(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                            circle(cx='12' cy='7' r='4')
+                            path(d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+
+
+                        | #{gerente.nombre} #{gerente.ap_paterno} #{gerente.ap_materno}
+                    
+                    p 
+                        svg.icon.icon-tabler.icon-tabler-phone(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                            path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                            path(d='M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2')
+
+
+                        | #{gerente.telefono} 
+                    a(href=`gerentes/editar/${gerente.id_grt}`, class= "btn btn-info btn-block") Editar
+                    a(href=`gerentes/eliminar/${gerente.id_grt}`, class= "btn btn-warning btn-block") Eliminar
+                    a(href=`gerentes/${gerente.id_grt}`, class= "btn btn-success btn-block") Más información 
