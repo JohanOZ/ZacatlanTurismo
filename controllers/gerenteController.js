@@ -19,7 +19,7 @@ const guardarGerente = async (req, res) => {
     }
 
     if (hotelVerificacion!=null) {
-        if(verificar.id_grt != id_grt) {
+        if(hotelVerificacion.id_grt != id_grt) {
             errores.push({error: 'Ese hotel ya tiene un gerente'});
         }
     }
