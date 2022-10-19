@@ -23,13 +23,13 @@ block contenido
                         circle(cx='12' cy='11' r='3')
                         path(d='M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z')
 
-                    | Direccion: 
+                    | Dirección: 
                     span.font-weight-normal #{hotel.direccion} 
                 p.font-weight-bold
                     svg.icon.icon-tabler.icon-tabler-phone(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
                         path(stroke='none' d='M0 0h24v24H0z' fill='none')
                         path(d='M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2')
-                    | Telefono: 
+                    | Teléfono: 
                     a(href=`tel:+${hotel.telefono}`)  #{hotel.telefono}
                 p.font-weight-bold  
                     svg.icon.icon-tabler.icon-tabler-mail(xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')

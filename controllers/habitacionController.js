@@ -119,8 +119,8 @@ const editarHabitacion = async (req, res) => {
 
         const habitacion = await Habitacion.findByPk(id_hbt);
         const hoteles = await Hotel.findAll();
-        res.render('edicionGerente', {
-            pagina: 'Editar Hotel',
+        res.render('edicionHabitacion', {
+            pagina: 'Editar Habitación',
             id_hbt,
             piso,
             nombre,

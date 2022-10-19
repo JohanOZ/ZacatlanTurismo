@@ -161,7 +161,7 @@ const editarGerente = async (req, res) => {
         const gerente = await Gerente.findByPk(id_grt);
         const hoteles = await Hotel.findAll();
         res.render('edicionGerente', {
-            pagina: 'Editar Hotel',
+            pagina: 'Editar Gerente',
             id_grt,
             nombre,
             ap_paterno,
