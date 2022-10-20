@@ -5,7 +5,7 @@ const guardarGerente = async (req, res) => {
     //Validar form
     const { id_htl, nombre, ap_paterno, ap_materno, telefono } = req.body;
 
-    const hotelVerificacion = await Gerente.findOne({ where: { id_htl } });
+    const gerenteVerificacion = await Gerente.findOne({ where: { id_htl } });
 
     let errores = [];
 
@@ -18,10 +18,8 @@ const guardarGerente = async (req, res) => {
         }
     }
 
-    if (hotelVerificacion!=null) {
-        if(hotelVerificacion.id_grt != id_htl) {
-            errores.push({error: 'Ese hotel ya tiene un gerente'});
-        }
+    if (gerenteVerificacion!=null) {
+            errores.push({mensaje: 'Ese hotel ya tiene un gerente'});
     }
 
     if(nombre.trim() === '') {
@@ -113,7 +111,7 @@ const editarGerente = async (req, res) => {
 
     const { id_grt, id_htl, nombre, ap_paterno, ap_materno, telefono } = req.body;
 
-    const hotelVerificacion = await Gerente.findOne({ where: { id_htl } });
+    const gerenteVerificacion = await Gerente.findOne({ where: { id_htl } });
 
     let errores = [];
 
@@ -126,8 +124,8 @@ const editarGerente = async (req, res) => {
         }
     }
 
-    if (hotelVerificacion!=null) {
-        if(hotelVerificacion.id_grt != id_grt) {
+    if (gerenteVerificacion!=null) {
+        if(gerenteVerificacion.id_grt != id_grt) {
             errores.push({mensaje: 'Ya existe un gerente para ese hotel'})
         }
     }
